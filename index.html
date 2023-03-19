@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>Yummy-Abdelmonem</title>
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+<div class="loadingScreen d-flex justify-content-center align-items-center">
+<div class="welcomeScreen">
+  <h1>Please Wait For Loading Data....</h1>
+</div>
+
+</div>
+
+<div class="menue ">
+     <div class="menue1 d-flex flex-column justify-content-between">
+<div class="menue1Section1 pt-4 ps-4">
+  <a href="#" class="list-group-item  " id="Search">Search</a>
+  <br>
+  <a href="#" class="list-group-item "id="Categories">Categories</a>
+  <br>
+  <a href="#" class="list-group-item " id="Area" >Area</a>
+  <br>
+  <a href="#" class="list-group-item  " id="Ingredients" >Ingredients</a>
+  <br>
+  <a href="#" class="list-group-item  " id="ContactUs">Contact Us</a>
+</div>
+
+
+<div class="menue1Section2 pb-4 ps-4">
+  <i class="fa-brands fa-facebook"></i>
+  <i class="fa-brands fa-twitter"></i>
+   <i class="fa-solid fa-globe text-white"></i>
+<h6>Copyright Â© 2019 All Rights</h6>
+<h6>Reserved</h6>
+</div>
+  </div>
+  <div class="menue2 p-2">
+    <img src="img/logo.png" alt="" class="w-100" id="logoHome">
+   
+    <div id="menueIconDiv">
+       <i class="fa-solid fa-bars text-black" id="menueIcon"></i>
+     </div>
+   
+<div class="d-flex flex-column align-items-center justify-content-between">
+  <i class="fa-solid fa-globe text-black"></i>
+  <i class="fa-solid fa-share-nodes text-black"></i>
+</div>
+  </div>
+ 
+
+</div>
+
+
+
+<div class="container allItems divVisible">
+  <div class="row" id="allDataInsert">
+
+  </div>
+</div>
+
+<!-- search -->
+<div class="container search divVisible">
+  <div class="row" id="allDataInsertSearch">
+    <div class="container w-75" id="searchContainer">
+      <div class="row py-4 ">
+          <div class="col-md-6 ">
+              <input onkeyup="searchByName(this.value)" class="form-control  text-black" type="text" placeholder="Search By Name">
+          </div>
+          <div class="col-md-6">
+              <input onkeyup="searchByFLetter(this.value)" maxlength="1" class="form-control text-black" type="text" placeholder="Search By First Letter">
+          </div>
+      </div></div>
+  </div>
+</div>
+<!-- Categories -->
+<div class="container Categories divVisible">
+  <div class="row" id="allDataInsertCategories">
+    
+  </div>
+</div>
+<!-- Area -->
+<div class="container Area divVisible">
+  <div class="row" id="allDataInsertArea">
+   
+  </div>
+</div>
+<!-- Ingredients -->
+<div class="container Ingredients divVisible">
+  <div class="row" id="allDataInsertIngredient">
+
+  </div>
+</div>
+<!-- ContactUs -->
+<div class="container ContactUs divVisible p-5">
+ 
+
+          <div class="row g-6" id="allDataContactUs">
+              <div class="col-md-6">
+                  <!-- <input id="nameInput" onkeyup="inputsValidation()" type="text" class="form-control" placeholder="Name"> -->
+                  <input id="nameInput" type="text" class="form-control" placeholder="Name">
+                  <h6 id="nameAlert" class=" mt-1 text-danger"> Special characters and numbers not allowed</h6>
+              </div>
+              <div class="col-md-6">
+                  <input id="emailInput" onkeyup="inputsValidation()" type="email" class="form-control " placeholder="Email">
+                   <h6 id="emailAlert" class=" mt-1 text-danger">Email not valid *exemple@yyy.zzz </h6>
+              </div>
+              <div class="col-md-6">
+                  <input id="phoneInput" onkeyup="inputsValidation()" type="text" class="form-control " placeholder="Phone">
+                  <h6 id="phoneAlert" class=" mt-1 text-danger">    Enter valid Phone Number </h6>
+              </div>
+              <div class="col-md-6">
+                  <input id="ageInput" onkeyup="inputsValidation()" type="number" class="form-control " placeholder="Age">
+              <h6 id="ageAlert" class=" mt-1 text-danger">    Enter valid age </h6>
+              </div>
+              <div class="col-md-6">
+                  <input id="passwordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Password">
+                  <h6 id="passwordAlert" class=" mt-1 text-danger">  Enter valid password *Minimum eight characters, at least one letter and one number:* </h6>
+                  </div>
+              <div class="col-md-6">
+                  <input id="repasswordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+                  <h6 id="repasswordAlert" class=" mt-1 text-danger"> Enter valid repassword </h6>
+              </div>
+          </div>
+          <button id="subBtn" class="btn btn-success disabled">Submit</button>
+      </div>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
