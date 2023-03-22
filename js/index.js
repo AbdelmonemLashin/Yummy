@@ -223,25 +223,6 @@ function searchIngredient(term){
 }
 }});}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  var itemIdDetails={};
  function getItemId(term){
   //  $('#allDataInsertSearchIngredients').empty()
@@ -313,22 +294,7 @@ function searchIngredient(term){
  
   ;}}});}
 
-// function grtinner(inner){
 
-//   if(inner<1000)
-//   {
-//     $('.IngredientList').addClass('d-none')
-//   }
-
-
-
-// }
-
-
-
-$('li').click(()=>{
-  console.log($('.IngredientList').innerWidth());
-})
 
 
 
@@ -357,8 +323,6 @@ $('li').click(()=>{
      switchMenue = 0;
    }
  }
-
-
 
 
 // Menue Links//////////
@@ -428,3 +392,98 @@ $('#ContactUs').click(()=>{
 
 
           // <h5>${allData[i].strMeal.split(" ").slice(0,3).join(" ")}</h5> 
+
+
+  
+      // // Category
+      // var allItemsSearchByName=[];
+      // function getItemsSearchByName(){
+      //     var myHttpReqItemsSearchByName=new XMLHttpRequest();
+      // myHttpReqItemsSearchByName.open('GET',`https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`);
+      // myHttpReqItemsSearchByName.send();
+      
+      // myHttpReqItemsSearchByName.addEventListener('readystatechange',()=>{
+      //     if(myHttpReqItemsSearchByName.readyState==4 && myHttpReqItemsSearchByName.status==200)
+      //     {
+      //         $('.loadingScreen').addClass('d-none')
+      //         allItemsSearchByName=JSON.parse(myHttpReqItemsSearchByName.response).categories;
+      //         displyItemsSearchByName ()
+      //         $('.loadingScreen').addClass('d-none')
+      //       }})}
+      // // getAllItems
+      // getAllCategory()
+      //     // displyCategory
+      // function displyItemsSearchByName (){
+      // for (let i = 0; i < allItemsSearchByName.length; i++) {
+        
+      //           $('#allDataInsertCategories').append(` <div class="col-md-4 col-lg-3 col-sm-6 d-flex" >
+      //             <div class="item my-3">
+      //         <img src="${allItemsSearchByName[i].allItemsSearchByName}" class="w-100" alt="Not Found This Image">
+      //         <div class="layerCategory text-center" onclick="searchCategories(this)" >
+      //               <h3>${allItemsSearchByName[i].strCategory}</h3>
+      //               <p class="text-black"> ${allItemsSearchByName[i].strCategoryDescription.split(" ").slice(0,20).join(" ")}</p>
+      //                        </div>
+      //    </div>
+      //    </div>`)
+      // }}
+  
+
+  
+
+
+
+   var allItemsSearchByName=[];
+  function searchByName(term){
+let nameSearch=term
+// console.log(nameSearch);
+
+var myHttpReqItemsSearchByName=new XMLHttpRequest();
+myHttpReqItemsSearchByName.open('GET',`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
+myHttpReqItemsSearchByName.send();
+
+myHttpReqItemsSearchByName.addEventListener('readystatechange',()=>{
+    if(myHttpReqItemsSearchByName.readyState==4 && myHttpReqItemsSearchByName.status==200)
+    {
+     console.log(allItemsSearchByName);
+        $('.loadingScreen').addClass('d-none')
+        allItemsSearchByName=JSON.parse(myHttpReqItemsSearchByName.response).meals;
+        // displyItemsSearchByName ()
+        $('.loadingScreen').addClass('d-none')
+      }
+      else{
+     console.log('error');
+      }
+    }
+        
+    )
+
+
+
+    for (let i = 0; i < allItemsSearchByName.length; i++) {
+      if(allItemsSearchByName[i].strMeal.includes(nameSearch))
+        // if (allItemsSearchByName[i].strMeal.toLowerCase().includes(nameSearch.toLowerCase()))
+        {
+        // console.log(nameSearch);
+ 
+
+
+
+
+
+
+
+
+      $('#allDataInsertSearch').html(`<div class="col-md-4 col-lg-3 col-sm-6 d-flex" >
+      <div class="item my-3">
+      <img src="${allItemsSearchByName[i].strMealThumb}" class="w-100" alt="Not Found This Image">
+      <div class="layer" onclick="getItemId(${allItemsSearchByName[i].idMeal})">
+      <h3 id="strMealName">${allItemsSearchByName[i].strMeal}</h3>
+    </div>
+    </div>
+    </div>`)
+             }
+      }
+}
+
+      
+    
